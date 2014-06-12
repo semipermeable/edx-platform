@@ -8,6 +8,7 @@ tddium:
       pip install -r requirements/edx/local.txt
       pip install -r requirements/edx/github.txt
       pip install -r requirements/edx/post.txt
+      pip install -r requirements/edx/paver.txt
   :cache:
     :key_paths:
       - requirements/edx/pre.txt
