@@ -1,6 +1,7 @@
 tddium:
   :python:
     :python_version: 2.7
+  :timeout_hook: 900
   :hooks:
     :pre_setup: |
       pip install -r requirements/edx/pre.txt
