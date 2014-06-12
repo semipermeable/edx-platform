@@ -1,11 +1,16 @@
 tddium:
   :python:
     :python_version: 2.7
-    :pip_requirements_file: "requirements/edx/solano.txt"
   :hooks:
-    :worker_setup: "pip install -r requirements/edx/post.txt"
+    :pre_setup: |
+      pip install -r requirements/edx/pre.txt
+      pip install -r requirements/edx/base.txt
+      pip install -r requirements/edx/local.txt
+      pip install -r requirements/edx/github.txt
+      pip install -r requirements/edx/post.txt
   :cache:
     :key_paths:
+      - requirements/edx/pre.txt
       - requirements/edx/base.txt
       - requirements/edx/github.txt
       - requirements/edx/local.txt
@@ -21,11 +26,3 @@ tddium:
   :chrome:
   :tests:
     - paver test_lib
-    #- paver test_lms
-    #- paver test_cms
-    #- paver test_lib
-    #- paver test_js
-    #- rake test:acceptance:lms["-v 3 --tag shard_${SHARD}"]
-    #- rake test:acceptance:cms["-v 3 --tag shard_${SHARD}"]
-    #- rake test:bok_choy --lms
-    #- rake test:bok_choy --studio
